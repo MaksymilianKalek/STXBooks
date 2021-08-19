@@ -16,8 +16,12 @@ You can visit this working API at <http://makskalek.pythonanywhere.com>
 
 ### Available paths are
 * /db - send a POST request that will populate the database with books from <https://www.googleapis.com/books/v1/volumes> with body {'q', 'war'} (as specified in this task's documentation)
-* /books/4 - view a specific book, where the number is an integer that is the id of the book
+* /authors - get the list of all authors
+* /categories - get the list of all categories
 * /books - get the list of all books
+
+Additionally, you can view specific book, author, category by visiting the url with an integer that represents the id of the object
+* For example /books/2
 
 With /books you can also filter and sort the results
 * ?published_date=1999 will return all of the books from 1999
