@@ -22,7 +22,7 @@ You can visit this working API at <http://makskalek.pythonanywhere.com>
 With /books you can also filter and sort the results
 * ?published_date=1999 will return all of the books from 1999
 * ?sort=published_date will sort all of the books by their date of publishing
-* ?author="Sebastian Junger"&author="P. W. Singer" will return all of the books written by one of these authors
+* ?author="Sebastian Junger"&author="P. W. Singer" will return all books written by one of these authors
 
 
 
