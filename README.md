@@ -15,7 +15,7 @@ pip install -r requirements.txt
 You can visit this working API at <http://makskalek.pythonanywhere.com>
 
 ### Available paths are
-* /db - send a POST request that will populate the database with books from <https://www.googleapis.com/books/v1/volumes> with body {'q', 'war'}
+* /db - send a POST request that will populate the database with books from <https://www.googleapis.com/books/v1/volumes> with body {'q', 'war'} (as specified in this task's documentation)
 * /books/4 - where id is an integer that is the id of the book
 * /books - get the list of all books
 
