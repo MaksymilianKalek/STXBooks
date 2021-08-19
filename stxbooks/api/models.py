@@ -20,7 +20,7 @@ class Category(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=200)
     authors = models.ManyToManyField(Author)
-    published_date = models.PositiveIntegerField(default=0, null=True)
+    published_date = models.CharField(max_length=200, null=True)
     categories = models.ManyToManyField(Category)
     average_rating = models.FloatField(null=True)
     ratings_count = models.PositiveIntegerField(null=True)
