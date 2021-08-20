@@ -25,11 +25,8 @@ class BookViewSet(viewsets.ModelViewSet):
         if published_date is not None and published_date != '':
             queryset = queryset.filter(published_date=published_date)
         if authors is not None and len(authors) > 0:
-            authors_list = []
-            for author in authors:
-                author = author.replace('"', '')
-                a = Author.objects.get(author=author)
-                authors_list.append(a)
+            authors_list = map(lambda author: Author.objects.get(
+                author=author.replace('"', '')), authors)
             queryset = queryset.filter(authors__in=authors_list)
         if sort is not None and sort != '':
             queryset = queryset.order_by(sort)
@@ -64,7 +61,6 @@ class DBPost(APIView):
 
             if 'publishedDate' in book['volumeInfo']:
                 b.published_date = book['volumeInfo']['publishedDate']
-
             if 'averageRating' in book['volumeInfo']:
                 b.average_rating = float(
                     book['volumeInfo']['averageRating'])
@@ -73,6 +69,7 @@ class DBPost(APIView):
             if 'imageLinks' in book['volumeInfo'] and 'thumbnail' in book['volumeInfo']['imageLinks']:
                 b.thumbnail = book['volumeInfo']['imageLinks']['thumbnail']
             b.save()
+
             if 'authors' in book['volumeInfo']:
                 for author in list(book['volumeInfo']['authors']):
                     if len(all_authors.filter(author=author)) == 0:
