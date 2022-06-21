@@ -1,5 +1,7 @@
 # STXBooks
 
+This project was created during my recruitment process to one of the software houses in Poznan.
+
 STXBooks is a simple REST API based on Django Rest Framework that allows you to browse through google's book volumes from <https://www.googleapis.com/books/v1/volumes>
 
 ## Installation
